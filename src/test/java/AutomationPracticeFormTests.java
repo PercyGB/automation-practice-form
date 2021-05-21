@@ -38,8 +38,7 @@ public class AutomationPracticeFormTests {
         $("#uploadPicture").uploadFile(new File("./src/test/resources/john-doe-photo.jpg"));
         $("#currentAddress").setValue("Washington, DC");
 
-        $("#state").click();
-        $(byText("NCR")).click();
+        $("#react-select-3-input").setValue("NCR").pressEnter();
         $("#city").click();
         $(byText("Delhi")).click();
 
