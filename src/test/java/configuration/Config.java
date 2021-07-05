@@ -24,8 +24,8 @@ public class Config {
         Configuration.browserCapabilities = capabilities;
         String login = credentials.login();
         String password = credentials.password();
-        String selenoidUrl = System.getProperty("url");
-        Configuration.remote = String.format("https://$s:$s@%s/wd/hub/", login, password, selenoidUrl);
+        String url = System.getProperty("url");
+        Configuration.remote = String.format("https://$s:$s@%s/wd/hub/", login, password, url);
 
     }
 
