@@ -22,10 +22,10 @@ public class Config {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
-        String login = credentials.login();
-        String password = credentials.password();
+//        String login = credentials.login();
+//        String password = credentials.password();
         String url = credentials.url();
-        Configuration.remote = String.format("https://$s:$s@%s/wd/hub/", login, password, url);
+        Configuration.remote = String.format("https://user1:1234@%s/wd/hub/", url);
     }
 
     @AfterEach
