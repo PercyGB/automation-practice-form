@@ -39,7 +39,7 @@ public class Attach {
     }
 
     public static void addVideo(String sessionId) {
-        String selenoidUrl = "https://" + System.getProperty("url");
+        String selenoidUrl = "https://" + System.getProperty("selenoidUrl");
 
         try {
             URL videoUrl = new URL(selenoidUrl + "/video/" + sessionId + ".mp4");
