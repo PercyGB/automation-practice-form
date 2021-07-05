@@ -45,7 +45,4 @@ test {
 
 tasks.withType(Test) {
     systemProperties(System.getProperties())
-    testLogging {
-        events "STANDARD_OUT"
-    }
 }
