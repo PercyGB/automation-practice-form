@@ -25,7 +25,7 @@ public class Config {
         String login = credentials.login();
         String password = credentials.password();
 //        Configuration.remote = String.format("https://$s:$s@%s/wd/hub/", login, password, System.getProperty("url"));
-/        Configuration.remote = String.format("https://$s:$s@selenoid.autotests.cloud/wd/hub/", login, password);
+        Configuration.remote = String.format("https://$s:$s@selenoid.autotests.cloud/wd/hub/", login, password);
 
     }
 
