@@ -8,6 +8,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.sql.SQLOutput;
+
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static configuration.Credentials.*;
@@ -25,6 +27,11 @@ public class Config {
         String login = credentials.login();
         String password = credentials.password();
         String server = System.getProperty("server");
+
+        System.out.println(login);
+        System.out.println(password);
+        System.out.println(server);
+
         Configuration.remote = String.format("https://$s:$s@%s/wd/hub/", login, password, server);
 
     }
