@@ -1,4 +1,4 @@
-package helpers;
+package configuration;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
@@ -10,7 +10,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
-import static helpers.Credentials.*;
+import static configuration.Credentials.*;
 
 public class Config {
 

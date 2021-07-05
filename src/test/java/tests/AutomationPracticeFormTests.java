@@ -1,11 +1,7 @@
 package tests;
 
-import com.codeborne.selenide.Configuration;
-import helpers.Config;
-import org.junit.jupiter.api.BeforeAll;
+import configuration.Config;
 import org.junit.jupiter.api.Test;
-
-import org.junit.jupiter.api.BeforeAll;
 
 import java.io.File;
 
