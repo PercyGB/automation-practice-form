@@ -25,7 +25,7 @@ public class Config {
         String login = credentials.login();
         String password = credentials.password();
         String url = credentials.url();
-        Configuration.remote = String.format("https://$s:$s@S/wd/hub/", login, password, url);
+        Configuration.remote = String.format("https://$s:$s@%s/wd/hub/", login, password, url);
     }
 
     @AfterEach
