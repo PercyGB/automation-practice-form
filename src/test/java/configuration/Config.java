@@ -24,8 +24,8 @@ public class Config {
         Configuration.browserCapabilities = capabilities;
         String login = credentials.login();
         String password = credentials.password();
-        String url = System.getProperty("url");
-        Configuration.remote = String.format("https://$s:$s@%s/wd/hub/", login, password, url);
+        String server = System.getProperty("server");
+        Configuration.remote = String.format("https://$s:$s@%s/wd/hub/", login, password, server);
 
     }
 
