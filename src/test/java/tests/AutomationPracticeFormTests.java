@@ -1,3 +1,5 @@
+package tests;
+
 import com.codeborne.selenide.Configuration;
 import helpers.Config;
 import org.junit.jupiter.api.BeforeAll;

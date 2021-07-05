@@ -27,7 +27,8 @@ dependencies {
             "org.junit.jupiter:junit-jupiter-api:$junitVersion",
             "com.github.javafaker:javafaker:1.0.2",
             "org.aspectj:aspectjweaver:1.9.6",
-            "io.qameta.allure:allure-selenide:$allureVersion"
+            "io.qameta.allure:allure-selenide:$allureVersion",
+            "org.aeonbits.owner:owner:1.0.4"
     )
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
 }
@@ -38,6 +39,17 @@ tasks.withType(JavaCompile) {
     targetCompatibility = JavaVersion.VERSION_11
 }
 
+tasks.withType(Test){
+    systemProperties(System.getProperties())
+}
+
 test {
     useJUnitPlatform()
+}
+
+tasks.withType(Test) {
+    systemProperties(System.getProperties())
+    testLogging {
+        events "STANDARD_OUT"
+    }
 }

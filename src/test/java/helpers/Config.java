@@ -10,6 +10,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+import static helpers.Credentials.*;
 
 public class Config {
 
@@ -21,7 +22,10 @@ public class Config {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
+        String login = credentials.login();
+        String password = credentials.password();
+        String url = credentials.url();
+        Configuration.remote = String.format("https://$s:$s@S/wd/hub/", login, password, url);
     }
 
     @AfterEach
