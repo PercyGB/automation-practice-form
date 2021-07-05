@@ -39,10 +39,7 @@ tasks.withType(JavaCompile) {
     targetCompatibility = JavaVersion.VERSION_11
 }
 
-test {
-    useJUnitPlatform()
-}
-
 tasks.withType(Test) {
     systemProperties(System.getProperties())
+    useJUnitPlatform()
 }
