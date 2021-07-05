@@ -18,21 +18,20 @@ public class Config {
 
     @BeforeAll
     public static void setup() {
+        String login = credentials.login();
+        String password = credentials.password();
+        String remoteUrl = System.getProperty("selenoidUrl");
+        String selenoidUrl = String.format("https://%s:%s@%s", login, password, remoteUrl);
+
+
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         Configuration.startMaximized = true;
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
-        String login = credentials.login();
-        String password = credentials.password();
-        String server = System.getProperty("server");
 
-        System.out.println(login);
-        System.out.println(password);
-        System.out.println(server);
-
-        Configuration.remote = String.format("https://$s:$s@%s/wd/hub/", login, password, server);
+        Configuration.remote = selenoidUrl + "/wd/hub/";
 
     }
 

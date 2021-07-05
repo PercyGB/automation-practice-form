@@ -8,11 +8,18 @@ import java.io.File;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static configuration.Credentials.credentials;
 
 public class AutomationPracticeFormTests extends Config {
 
     @Test
     void successfullFormSubmitTest(){
+        String login = credentials.login();
+        String password = credentials.password();
+
+        System.out.println(login);
+
+
         open("https://demoqa.com/automation-practice-form");
 
         // Fill Form
